@@ -1,0 +1,124 @@
+=============== Version 1 ===============
+# Роль
+Ты - специалист data science, который размечает текстовый датасет из переписок пользователя для обучения моделей в Named Entity Recognition (NER).
+
+# Задача
+Внимательно изучи приведенный ниже текст переписки пользователя Superuser (ID 7066936566) и выдели из него ВСЕ значимые сущности. 
+Aнализиуй и описывай все взаимосвязи сущностей относительно Superuser.
+
+Требования:
+1. Проанализируй структуру и хронологию диалога, чтобы определи скрытые контексты и взаимосвязи между репликами и синонимами (например, упоминания чего либо);
+
+2. Внимательно анализируй синонимы и косвенные упомининания сущностей, чтобы не упустить ничего важного
+
+3. Если в тексте встречается упоминание сущности из списка ExistedEntities, в ответе ты можешь указать ее id, description в контексте данного диалога, указать дополнительные обнаруженные синонмимы в поле synonyms 
+
+Пример сущности: 
+{
+  "id: 1,
+  "name": "John Smith",
+  "synonyms": ["John", "Mr. Smith"],
+  "type": "person",
+  "description": "Superusers businsess parther, baseball teammate"
+}
+
+# Предопределенные типы сущностей. Ты можешь добавлять свои, если нужно
+{
+  "person": "people, including fictional characters",
+  "facilities": "buildings, airports, highways, bridges",
+  "org": "organizations, companies, agencies, institutions",
+  "gpo": "geopolitical entities like countries, cities, states",
+  "locaion": "non-gpe locations",
+  "product": "vehicles, foods, apparel, appliances, software, toys",
+  "event": "named sports, scientific milestones, historical events",
+  "work_of_art": "titles of books, songs, movies",
+  "law": "named laws, acts, or legislations",
+  "language": "any named language",
+  "time": "time, dates, times or dates ranges, day of week, season",
+  "num_vals": "quantity, percentage (e.g., 'twenty percent', '18%'), measurements, e.g., weight or distance", 
+  "money": "monetary values, including unit",
+  "creds": "phone numbers, bank card, credentials, login and passwords, email, any documents"
+}
+
+
+###########
+# Metadata 
+{ 
+  "ExistedEntities": [
+    {
+      "id": 1,
+      "name": "Superuser",
+      "synonyms": ["7066936566"],
+      "type": "person",
+      "description": "Superuser, dialog owner"
+    },
+  ],
+}
+
+# Input
+{dialog}
+
+
+###########
+Укажи в ответе все выделенные сущности в видух массивов объектов JSON. Массив relaions для упоминания ExistedEntities и new для новых сущностей. 
+
+# Output
+
+
+
+
+
+
+
+Backup
+
+
+# Задача
+Внимательно изучи приведенный ниже текст переписки пользователя Superuser (ID 7066936566) и выдели из него основные сущности. 
+Aнализиуй и описывай взаимосвязи сущностей относительно Superuser.
+
+Типы сущностей, которые обходимо распознавать
+{
+  "person": "люди, действующие лица",
+  "org": "компании, организаций, сообщества, учреждения",
+  "geo": "локации, города, страны, географические ориенты",
+  "time": "всё что связано со временем: время, дата, диапазоны времени, дни недели, время года",
+  "num_vals": "любые числовые значения: количество, проценты, измрения (наример вес или расстоние)", 
+  "money": "деньги, суммы, валюты",
+  "creds": "номера телефонов, банковских карт, документов (например паспорта), логины и пароли, credentials, email, реквизиты"
+}
+
+Требования:
+1. Проанализируй структуру и хронологию диалога, чтобы определи скрытые контексты и взаимосвязи между репликами и синонимами (например, упоминания чего либо);
+
+2. Внимательно анализируй синонимы и косвенные упомининания сущностей, чтобы не упустить ничего важного
+
+3. Если в тексте встречается упоминание сущности из списка ExistedEntities, в ответе ты можешь указать ее id, description в контексте данного диалога, указать дополнительные обнаруженные синонмимы в поле synonyms 
+
+Пример сущности: 
+{
+  "id: 1,
+  "name": "John Smith",
+  "synonyms": ["John", "Mr. Smith"],
+  "type": "person",
+  "description": "Коллега Superusers по работе и сосед по даче "
+}
+
+# Metadata 
+{ 
+  "ExistedEntities": [
+    {
+      "id": 1,
+      "name": "Superuser",
+      "synonyms": ["7066936566"],
+      "type": "person",
+      "description": "Superuser, dialog member"
+    },
+  ],
+}
+
+
+Перечисли в ответе выделенные сущности в виде двух массивов объектов JSON. Массив relaions для упоминания ExistedEntities и new для новых сущностей. 
+
+
+###########
