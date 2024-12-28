@@ -3,7 +3,7 @@ __pycache__/
 .ipynb_checkpoints/
 venv/
 dev_data/
-# app_data/
+app_data/
 aipoweredsearch.session
 env.py
 .env
